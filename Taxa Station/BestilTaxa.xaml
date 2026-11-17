@@ -1,0 +1,19 @@
+﻿<Window x:Class="Taxa_Station.BestilTaxa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Taxa_Station"
+        mc:Ignorable="d"
+        Title="BestilTaxa" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="25,20,0,0" VerticalAlignment="Top" Click="Tilbage_Click"/>
+        <ListBox x:Name="TaxaStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="575,0,0,0"/>
+        <Label Content="Vælg en Taxa" HorizontalAlignment="Left" Margin="96,138,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="valgAfTaxaKnap" HorizontalAlignment="Left" Margin="237,140,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Indtast afhentningssted" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="afhentningssted" HorizontalAlignment="Left" Margin="237,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Bestil" HorizontalAlignment="Left" Margin="236,307,0,0" VerticalAlignment="Top" Height="44" Width="122"/>
+
+    </Grid>
+</Window>

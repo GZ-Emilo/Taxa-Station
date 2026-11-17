@@ -1,0 +1,20 @@
+﻿<Window x:Class="Taxa_Station.ChaufførSide"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Taxa_Station"
+        mc:Ignorable="d"
+        Title="ChaufførSide" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="ChaufLogUd" Content="Log Ud" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Click="ChaufLogUd_Click"/>
+        <Label Content="Opdater din status:" HorizontalAlignment="Left" Margin="110,133,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="241,135,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Arbejdstid:" HorizontalAlignment="Left" Margin="132,0,0,0" VerticalAlignment="Center"/>
+        <Label Content="Din status lige nu:" HorizontalAlignment="Left" Margin="228,58,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="362,58,0,0" VerticalAlignment="Top"/>
+        <Label Content="Label" HorizontalAlignment="Left" Margin="241,0,0,0" VerticalAlignment="Center"/>
+        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,0,0,0"/>
+
+    </Grid>
+</Window>
