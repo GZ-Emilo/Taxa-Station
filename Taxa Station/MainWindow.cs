@@ -36,4 +36,19 @@ namespace Taxa_Station
             this.Close();
         }
     }
+    class Taxi
+    {
+        public List<Chauffør> chaufførlist = new List<Chauffør>();
+        public int nummer;
+    }
+    class Chauffør
+    {
+
+        public string navn;
+        public string status;
+        public override string ToString()
+        {
+            return navn + " : " + status;
+        }
+    }
 }

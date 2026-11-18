@@ -10,7 +10,7 @@
         <Button x:Name="Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="25,20,0,0" VerticalAlignment="Top" Click="Tilbage_Click"/>
         <ListBox x:Name="TaxaStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="575,0,0,0"/>
         <Label Content="Vælg en Taxa" HorizontalAlignment="Left" Margin="96,138,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="valgAfTaxaKnap" HorizontalAlignment="Left" Margin="237,140,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="valgAfTaxaKnap" HorizontalAlignment="Left" Margin="237,140,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="valgAfTaxaKnap_SelectionChanged"/>
         <Label Content="Indtast afhentningssted" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Center"/>
         <TextBox x:Name="afhentningssted" HorizontalAlignment="Left" Margin="237,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Button Content="Bestil" HorizontalAlignment="Left" Margin="236,307,0,0" VerticalAlignment="Top" Height="44" Width="122"/>
