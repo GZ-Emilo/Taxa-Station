@@ -20,6 +20,10 @@ namespace Taxa_Station
         public BestilTaxa()
         {
             InitializeComponent();
+            BestilTaxaer();
+        }
+        private void BestilTaxaer()
+        {
             List<Chauffør> chaufførlist = new List<Chauffør>();
 
             Chauffør kør1 = new Chauffør();
@@ -46,15 +50,8 @@ namespace Taxa_Station
             chaufførlist.Add(kør4);
             chaufførlist.Add(kør5);
 
-
-            //TaxaStatus.Items.Add(kør1);
-            //TaxaStatus.Items.Add(kør2);
-            //TaxaStatus.Items.Add(kør3);
-            //TaxaStatus.Items.Add(kør4);
-            //TaxaStatus.Items.Add(kør5);
             TaxaStatus.ItemsSource = chaufførlist;
         }
-
         private void Tilbage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow tilbage = new MainWindow();
