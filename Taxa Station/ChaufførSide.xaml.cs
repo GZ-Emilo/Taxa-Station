@@ -20,6 +20,14 @@ namespace Taxa_Station
         public ChaufførSide()
         {
             InitializeComponent();
+
+        }
+
+        public void skabChauffør()
+        {
+
+
+
         }
 
         private void ChaufLogUd_Click(object sender, RoutedEventArgs e)
@@ -28,5 +36,7 @@ namespace Taxa_Station
             tilbage.Show();
             this.Close();
         }
+
+
     }
 }
