@@ -43,7 +43,6 @@ namespace Taxa_Station
     }
     class Chauffør
     {
-
         public string navn;
         public string status;
         public override string ToString()
