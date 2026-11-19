@@ -36,14 +36,13 @@ namespace Taxa_Station
             this.Close();
         }
     }
-    class Taxi
+    class Taxa
     {
-        public List<Chauffør> chaufførlist = new List<Chauffør>();
+        public Chauffør mand;
         public int nummer;
     }
     class Chauffør
     {
-
         public string navn;
         public string status;
         public override string ToString()
