@@ -17,6 +17,8 @@ namespace Taxa_Station
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Chauffør> chaufførlist = new List<Chauffør>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace Taxa_Station
 
         public void SkabListe()
         {
-            List<Chauffør> chaufførlist = new List<Chauffør>();
             Taxa kør1 = new Taxa();
             Taxa kør2 = new Taxa();
             Taxa kør3 = new Taxa();
@@ -38,23 +39,29 @@ namespace Taxa_Station
             kør4.mand = new Chauffør();
             kør5.mand = new Chauffør();
 
-            //Chauffør kør1 = new Chauffør();
-            //Chauffør kør2 = new Chauffør();
-            //Chauffør kør3 = new Chauffør();
-            //Chauffør kør4 = new Chauffør();
-            //Chauffør kør5 = new Chauffør();
-
             kør1.mand.navn = "Povl";
             kør2.mand.navn = "Miriam";
             kør3.mand.navn = "Rasmus";
             kør4.mand.navn = "Khalid";
             kør5.mand.navn = "Tommy";
 
-            kør1.mand.status = "Tilgængelig";
-            kør2.mand.status = "Tilgængelig";
-            kør3.mand.status = "Tilgænelig";
-            kør4.mand.status = "Tilgængelig";
-            kør5.mand.status = "Tilgængelig";
+            kør1.mand.status = "Ledig";
+            kør2.mand.status = "Ledig";
+            kør3.mand.status = "Ledig";
+            kør4.mand.status = "Ledig";
+            kør5.mand.status = "Ledig";
+
+            kør1.mand.bn = "";
+            kør2.mand.bn = "";
+            kør3.mand.bn = "";
+            kør4.mand.bn = "";
+            kør5.mand.bn = "";
+
+            kør1.mand.pass = "";
+            kør2.mand.pass = "";
+            kør3.mand.pass = "";
+            kør4.mand.pass = "";
+            kør5.mand.pass = "";
 
             chaufførlist.Add(kør1.mand);
             chaufførlist.Add(kør2.mand);
@@ -66,24 +73,24 @@ namespace Taxa_Station
         }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
-            logIn logInSide = new logIn();
+            logIn logInSide = new logIn(chaufførlist);
             logInSide.Show();
             this.Close();
         }
 
         private void BestilTaxaButton_Click(object sender, RoutedEventArgs e)
         {
-            BestilTaxa bestil = new BestilTaxa();
+            BestilTaxa bestil = new BestilTaxa(chaufførlist);
             bestil.Show();
             this.Close();
         }
     }
-    class Taxa
+    public class Taxa
     {
         public Chauffør mand;
         public int nummer;
     }
-    class Chauffør
+    public class Chauffør
     {
         public string navn;
         public string status;

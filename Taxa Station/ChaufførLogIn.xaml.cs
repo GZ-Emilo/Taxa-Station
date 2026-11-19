@@ -17,14 +17,18 @@ namespace Taxa_Station
     /// </summary>
     public partial class ChaufførLogIn : Window
     {
-        public ChaufførLogIn()
+        private List<Chauffør> loginlist;
+
+
+        public ChaufførLogIn(List<Chauffør> loginlist)
         {
             InitializeComponent();
+            this.loginlist = loginlist;
         }
 
         private void tilbage_Click(object sender, RoutedEventArgs e)
         {
-            logIn logInSide = new logIn();
+            logIn logInSide = new logIn(loginlist);
             logInSide.Show();
             this.Close();
         }
