@@ -17,9 +17,13 @@ namespace Taxa_Station
     /// </summary>
     public partial class logIn : Window
     {
-        public logIn()
+
+        private List<Chauffør> loginlist;
+        public logIn(List<Chauffør> loginlist)
         {
             InitializeComponent();
+
+            this.loginlist = loginlist;
         }
 
         private void tilbage1_Click(object sender, RoutedEventArgs e)
@@ -31,14 +35,14 @@ namespace Taxa_Station
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            ChaufførLogIn chaufførlogin = new ChaufførLogIn();
+            ChaufførLogIn chaufførlogin = new ChaufførLogIn(loginlist);
             chaufførlogin.Show();
             this.Close();
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            OperatørLogIn OPLogIn = new OperatørLogIn();
+            OperatørLogIn OPLogIn = new OperatørLogIn(loginlist);
             OPLogIn.Show();
             this.Close();
         }
