@@ -36,9 +36,9 @@ namespace Taxa_Station
             this.Close();
         }
     }
-    class Taxi
+    class Taxa
     {
-        public List<Chauffør> chaufførlist = new List<Chauffør>();
+        public Chauffør mand;
         public int nummer;
     }
     class Chauffør
