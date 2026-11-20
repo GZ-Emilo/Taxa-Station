@@ -19,11 +19,6 @@ namespace Taxa_Station
     {
         public List<Chauffør> chaufførlist = new List<Chauffør>();
 
-        string ledig = "Ledig";
-        string utilgængelig = "Utilgængelig";
-        string pause = "På pause";
-        string fri = "Holder fri";
-
         public MainWindow()
         {
             InitializeComponent();
@@ -49,11 +44,11 @@ namespace Taxa_Station
             kør4.mand.navn = "Khalid";
             kør5.mand.navn = "Tommy";
 
-            kør1.mand.status = ledig;
-            kør2.mand.status = utilgængelig;
-            kør3.mand.status = ledig;
-            kør4.mand.status = pause;
-            kør5.mand.status = fri;
+            kør1.mand.status = "Ledig";
+            kør2.mand.status = "Utilgængelig";
+            kør3.mand.status = "Ledig";
+            kør4.mand.status = "Pause";
+            kør5.mand.status = "Fri";
 
             kør1.mand.bn = "";
             kør2.mand.bn = "";

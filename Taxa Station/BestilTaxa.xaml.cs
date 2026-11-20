@@ -18,11 +18,8 @@ namespace Taxa_Station
     /// </summary>
     public partial class BestilTaxa : Window
     {
-        private List<Chauffør> chaufførlist;
-        string ledig = "Ledig";
-        string utilgængelig = "Utilgængelig";
-        string pause = "På pause";
-        string fri = "Holder fri";
+        List<Chauffør> chaufførlist;
+        Chauffør valgt;
         public BestilTaxa(List<Chauffør> list)
         {
             InitializeComponent();
@@ -34,7 +31,7 @@ namespace Taxa_Station
             int i = 0;
             while (i < list.Count)
             {
-                if (list[i].status == ledig)
+                if (list[i].status == "Ledig")
                 {
                     TaxaStatus.Items.Add(list[i]);
                 }
@@ -51,8 +48,8 @@ namespace Taxa_Station
         private void TaxaStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ValgtTaxa.Items.Clear();
-            Chauffør valgt =(Chauffør) TaxaStatus.SelectedItem;
-            ValgtTaxa.Items.Add(valgt.navn);
+            valgt = (Chauffør)TaxaStatus.SelectedItem;
+            ValgtTaxa.Items.Add(valgt);
         }
 
         private void ValgtTaxa_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -62,10 +59,20 @@ namespace Taxa_Station
 
         private void bestilKnap_Click(object sender, RoutedEventArgs e)
         {
-            Chauffør valgt = (Chauffør)ValgtTaxa.ItemsSource;
-            TaxaStatus.Items.Remove(valgt);
+            Chauffør valgt = (Chauffør)TaxaStatus.SelectedItem;
+            int i = 0;
+            while (i < chaufførlist.Count)
+            {
+                if (valgt == chaufførlist[i])
+                {
+                    chaufførlist[i].status = "Utilgængelig";
+                }
+                i++;
+            }
             ValgtTaxa.Items.Clear();
             afhentningssted.Clear();
+            TaxaStatus.Items.Clear();
+            tilføjTilListe(chaufførlist);
         }
     }
 }
