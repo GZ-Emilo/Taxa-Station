@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Imaging.Effects;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,13 +18,30 @@ namespace Taxa_Station
     /// </summary>
     public partial class BestilTaxa : Window
     {
+        private List<Chauffør> chaufførlist;
+        string ledig = "Ledig";
+        string utilgængelig = "Utilgængelig";
+        string pause = "På pause";
+        string fri = "Holder fri";
         public BestilTaxa(List<Chauffør> list)
         {
             InitializeComponent();
-
-            TaxaStatus.ItemsSource = list;
+            chaufførlist = list;
+            tilføjTilListe(chaufførlist);
         }
-       
+        private void tilføjTilListe(List<Chauffør> list)
+        {
+            int i = 0;
+            while (i < list.Count)
+            {
+                if (list[i].status == ledig)
+                {
+                    TaxaStatus.Items.Add(list[i]);
+                }
+                i++;
+            }
+        }
+
         private void Tilbage_Click(object sender, RoutedEventArgs e)
         {
             MainWindow tilbage = new MainWindow();
@@ -32,20 +50,22 @@ namespace Taxa_Station
         }
         private void TaxaStatus_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Taxa vis = (Taxa)TaxaStatus.SelectedItem;
-            if (vis != null && vis.mand.status == "Tilgængelig")
-            {
-                TaxaStatus.Items.Add(vis.mand.navn + " : " + vis.mand.status);
-            }
+            ValgtTaxa.Items.Clear();
+            Chauffør valgt =(Chauffør) TaxaStatus.SelectedItem;
+            ValgtTaxa.Items.Add(valgt.navn);
         }
 
-        private void valgAfTaxaKnap_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ValgtTaxa_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //Taxa vis = (Taxa)TaxaStatus.SelectedItem;
-            //if (vis != null && vis.mand.status == "Tilgængelig")
-            //{
-            //    valgAfTaxaKnap.Items.Add(vis.mand.navn + " : " + vis.mand.status);
-            //}
+
+        }
+
+        private void bestilKnap_Click(object sender, RoutedEventArgs e)
+        {
+            Chauffør valgt = (Chauffør)ValgtTaxa.ItemsSource;
+            TaxaStatus.Items.Remove(valgt);
+            ValgtTaxa.Items.Clear();
+            afhentningssted.Clear();
         }
     }
 }

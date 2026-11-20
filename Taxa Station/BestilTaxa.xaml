@@ -7,13 +7,17 @@
         mc:Ignorable="d"
         Title="BestilTaxa" Height="450" Width="800">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="297*"/>
+            <ColumnDefinition Width="503*"/>
+        </Grid.ColumnDefinitions>
         <Button x:Name="Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="25,20,0,0" VerticalAlignment="Top" Click="Tilbage_Click"/>
-        <ListBox x:Name="TaxaStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="575,0,0,0"/>
-        <Label Content="Vælg en Taxa" HorizontalAlignment="Left" Margin="96,138,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="valgAfTaxaKnap" HorizontalAlignment="Left" Margin="237,140,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="valgAfTaxaKnap_SelectionChanged"/>
-        <Label Content="Indtast afhentningssted" HorizontalAlignment="Left" Margin="71,0,0,0" VerticalAlignment="Center"/>
-        <TextBox x:Name="afhentningssted" HorizontalAlignment="Left" Margin="237,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Bestil" HorizontalAlignment="Left" Margin="236,307,0,0" VerticalAlignment="Top" Height="44" Width="122"/>
+        <ListBox x:Name="TaxaStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="278,0,0,0" SelectionChanged="TaxaStatus_SelectionChanged" Grid.Column="1"/>
+        <Label Content="Vælg en Taxa" Margin="0,0,122,270" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="79"/>
+        <Label Content="Indtast afhentningssted" HorizontalAlignment="Right" Margin="0,0,91,0" VerticalAlignment="Center"/>
+        <TextBox x:Name="afhentningssted" HorizontalAlignment="Right" Margin="0,0,322,198" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Width="241" Grid.ColumnSpan="2"/>
+        <Button x:Name="bestilKnap" Content="Bestil" HorizontalAlignment="Right" Margin="0,0,442,83" VerticalAlignment="Bottom" Height="44" Width="122" Grid.ColumnSpan="2" Click="bestilKnap_Click"/>
+        <ListBox x:Name="ValgtTaxa" d:ItemsSource="{d:SampleData ItemCount=1}" Margin="0,0,443,270" SelectionChanged="ValgtTaxa_SelectionChanged" Grid.ColumnSpan="2" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="120"/>
 
     </Grid>
 </Window>
