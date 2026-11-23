@@ -20,6 +20,7 @@ namespace Taxa_Station
     {
         private List<Taxa> chauflist;
         List<Taxa> chaufLogged;
+
         public ChaufførSide(List<Taxa> loginlist, List<Taxa> chaufLoggedIn)
         {
             InitializeComponent();
@@ -59,6 +60,49 @@ namespace Taxa_Station
                 i++;
             }
             chaufførListbox.Items.Refresh();
+            gemList();
+
+        }
+        void gemList()
+        {
+            string[] gem = new string[chauflist.Count * 5];
+            int arrayPos = 4;
+            int p = 0;
+
+
+            while (p < chauflist.Count)
+            {
+                gem[arrayPos] = chauflist[p].chauffør.navn;
+                arrayPos++;
+                p++;
+
+            }
+            p = 0;
+
+            while (p<chauflist.Count)
+            {
+                gem[arrayPos] = chauflist[p].chauffør.status;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p<chauflist.Count)
+            {
+                gem[arrayPos] = chauflist[p].chauffør.bn;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p<chauflist.Count)
+            {
+                gem[arrayPos] = chauflist[p].chauffør.pass;
+                arrayPos++;
+                p++;
+            }
+
+            System.IO.File.WriteAllLines(@"gem1.txt", gem);
         }
     }
 }

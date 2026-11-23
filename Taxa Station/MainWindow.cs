@@ -17,7 +17,7 @@ namespace Taxa_Station
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Taxa> taxalist = new List<Taxa>();
+        public List<Taxa> taxalist = new List<Taxa>();
         public MainWindow()
         {
             InitializeComponent();
@@ -25,7 +25,50 @@ namespace Taxa_Station
         }
         public void SkabListe()
         {
+
+            int i = 0;
+            int arrayPos = 0;
+            string[] load = System.IO.File.ReadAllLines(@"gem1.txt");
+
+            while (i < load.Length/5)
+            {
+                Taxa taxa = new Taxa();
+                taxa.chauffør = new Chauffør();
+
+                taxalist.Add(taxa);
+                i++;
+            }
+            i = 0;
+            while (i < taxalist.Count)
+            {
+                taxalist[i].chauffør.navn = load[arrayPos];
+                arrayPos++;
+                i++;
+            }
+            i = 0;
+            while (i < taxalist.Count)
+            {
+                taxalist[i].chauffør.status = load[arrayPos];
+                arrayPos++;
+                i++;
+            }
+            i = 0;
+            while (i < taxalist.Count)
+            {
+                taxalist[i].chauffør.bn = load[arrayPos];
+                arrayPos++;
+                i++;
+            }
+            i = 0;
+            while (i < taxalist.Count)
+            {
+                taxalist[i].chauffør.pass = load[arrayPos];
+                arrayPos++;
+                i++;
+            }
             
+
+
             if (taxalist.Count <= 0)
             {
                 Taxa Taxa1 = new Taxa();
@@ -70,6 +113,8 @@ namespace Taxa_Station
                 taxalist.Add(Taxa4);
                 taxalist.Add(Taxa5);
             }
+
+
         }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
