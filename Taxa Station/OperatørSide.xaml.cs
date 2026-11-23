@@ -18,9 +18,11 @@ namespace Taxa_Station
     /// </summary>
     public partial class OperatørSide : Window
     {
-        public OperatørSide()
+        List<Taxa> loginlist;
+        public OperatørSide(List<Taxa> loginlist)
         {
             InitializeComponent();
+            this.loginlist = loginlist;
         }
 
         private void OPLogUd_Click(object sender, RoutedEventArgs e)
