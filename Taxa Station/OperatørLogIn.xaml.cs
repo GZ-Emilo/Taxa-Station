@@ -33,7 +33,7 @@ namespace Taxa_Station
 
         private void OPLogIn_Click(object sender, RoutedEventArgs e)
         {
-            OperatørSide OPSide = new OperatørSide();
+            OperatørSide OPSide = new OperatørSide(loginlist);
             OPSide.Show();
             this.Close();
         }

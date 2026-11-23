@@ -19,10 +19,12 @@ namespace Taxa_Station
     public partial class ChaufførSide : Window
     {
         private List<Taxa> chauflist;
-        public ChaufførSide(List<Taxa> loginlist)
+        List<Taxa> chaufLogged;
+        public ChaufførSide(List<Taxa> loginlist, List<Taxa> chaufLoggedIn)
         {
             InitializeComponent();
             chauflist = loginlist;
+            chaufLogged = chaufLoggedIn;
             skabListe();
         }
 
@@ -44,6 +46,19 @@ namespace Taxa_Station
             this.Close();
         }
 
-
+        private void sætLedig_Click(object sender, RoutedEventArgs e)
+        {
+            chaufLogged[0].chauffør.status = "Ledig";
+            int i = 0;
+            while (i < chauflist.Count)
+            {
+                if (chauflist[i].chauffør.bn == chaufLogged[0].chauffør.bn && chauflist[i].chauffør.pass == chaufLogged[0].chauffør.pass)
+                {
+                    chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                }
+                i++;
+            }
+            chaufførListbox.Items.Refresh();
+        }
     }
 }

@@ -35,9 +35,23 @@ namespace Taxa_Station
 
         private void ChaufLogIn_Click(object sender, RoutedEventArgs e)
         {
-            ChaufførSide ChaufSide = new ChaufførSide(loginlist);
-            ChaufSide.Show();
-            this.Close();
+            int i = 0;
+            while (i < loginlist.Count)
+            {
+                if (loginlist[i].chauffør.bn == chaufBN.Text && loginlist[i].chauffør.pass == chaufPass.Text)
+                {
+                    List<Taxa> chaufLoggedIn = new List<Taxa>();
+                    chaufLoggedIn.Add(loginlist[i]);
+                    ChaufførSide ChaufSide = new ChaufførSide(loginlist, chaufLoggedIn);
+                    ChaufSide.Show();
+                    this.Close();
+                }
+                else
+                {
+
+                }
+                i++;
+            }
         }
     }
 }

@@ -17,8 +17,7 @@ namespace Taxa_Station
     /// </summary>
     public partial class MainWindow : Window
     {
-        public List<Taxa> taxalist = new List<Taxa>();
-
+        private List<Taxa> taxalist = new List<Taxa>();
         public MainWindow()
         {
             InitializeComponent();
@@ -26,49 +25,51 @@ namespace Taxa_Station
         }
         public void SkabListe()
         {
-            Taxa Taxa1 = new Taxa();
-            Taxa Taxa2 = new Taxa();
-            Taxa Taxa3 = new Taxa();
-            Taxa Taxa4 = new Taxa();
-            Taxa Taxa5 = new Taxa();
+            
+            if (taxalist.Count <= 0)
+            {
+                Taxa Taxa1 = new Taxa();
+                Taxa Taxa2 = new Taxa();
+                Taxa Taxa3 = new Taxa();
+                Taxa Taxa4 = new Taxa();
+                Taxa Taxa5 = new Taxa();
 
-            Taxa1.chauffør = new Chauffør();
-            Taxa2.chauffør = new Chauffør();
-            Taxa3.chauffør = new Chauffør();
-            Taxa4.chauffør = new Chauffør();
-            Taxa5.chauffør = new Chauffør();
+                Taxa1.chauffør = new Chauffør();
+                Taxa2.chauffør = new Chauffør();
+                Taxa3.chauffør = new Chauffør();
+                Taxa4.chauffør = new Chauffør();
+                Taxa5.chauffør = new Chauffør();
 
-            Taxa1.chauffør.navn = "Povl";
-            Taxa2.chauffør.navn = "Miriam";
-            Taxa3.chauffør.navn = "Rasmus";
-            Taxa4.chauffør.navn = "Khalid";
-            Taxa5.chauffør.navn = "Tommy";
+                Taxa1.chauffør.navn = "Povl";
+                Taxa2.chauffør.navn = "Miriam";
+                Taxa3.chauffør.navn = "Rasmus";
+                Taxa4.chauffør.navn = "Khalid";
+                Taxa5.chauffør.navn = "Tommy";
 
-            Taxa1.chauffør.status = "Ledig";
-            Taxa2.chauffør.status = "Utilgængelig";
-            Taxa3.chauffør.status = "Ledig";
-            Taxa4.chauffør.status = "Pause";
-            Taxa5.chauffør.status = "Fri";
+                Taxa1.chauffør.status = "Utilgængelig";
+                Taxa2.chauffør.status = "Utilgængelig";
+                Taxa3.chauffør.status = "Ledig";
+                Taxa4.chauffør.status = "Pause";
+                Taxa5.chauffør.status = "Fri";
 
-            Taxa1.chauffør.bn = "";
-            Taxa2.chauffør.bn = "";
-            Taxa3.chauffør.bn = "";
-            Taxa4.chauffør.bn = "";
-            Taxa5.chauffør.bn = "";
+                Taxa1.chauffør.bn = "Povl";
+                Taxa2.chauffør.bn = "Miriam";
+                Taxa3.chauffør.bn = "Rasmus";
+                Taxa4.chauffør.bn = "Khalid";
+                Taxa5.chauffør.bn = "Tommy";
 
-            Taxa1.chauffør.pass = "";
-            Taxa2.chauffør.pass = "";
-            Taxa3.chauffør.pass = "";
-            Taxa4.chauffør.pass = "";
-            Taxa5.chauffør.pass = "";
+                Taxa1.chauffør.pass = "123";
+                Taxa2.chauffør.pass = "456";
+                Taxa3.chauffør.pass = "67";
+                Taxa4.chauffør.pass = "789";
+                Taxa5.chauffør.pass = "000";
 
-            taxalist.Add(Taxa1);
-            taxalist.Add(Taxa2);
-            taxalist.Add(Taxa3);
-            taxalist.Add(Taxa4);
-            taxalist.Add(Taxa5);
-
-
+                taxalist.Add(Taxa1);
+                taxalist.Add(Taxa2);
+                taxalist.Add(Taxa3);
+                taxalist.Add(Taxa4);
+                taxalist.Add(Taxa5);
+            }
         }
         private void LogInButton_Click(object sender, RoutedEventArgs e)
         {
@@ -87,7 +88,6 @@ namespace Taxa_Station
     public class Taxa
     {
         public Chauffør chauffør;
-        public int nummer;
     }
     public class Chauffør
     {
