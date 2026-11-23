@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,17 +18,22 @@ namespace Taxa_Station
     /// </summary>
     public partial class ChaufførSide : Window
     {
-        public ChaufførSide()
+        private List<Taxa> chauflist;
+        public ChaufførSide(List<Taxa> loginlist)
         {
             InitializeComponent();
-
+            chauflist = loginlist;
+            skabListe();
         }
 
-        public void skabChauffør()
+        public void skabListe()
         {
-
-
-
+            int i = 0;
+            while (i < chauflist.Count)
+            {
+                chaufførListbox.Items.Add(chauflist[i].chauffør);
+                i++;
+            }
         }
 
         private void ChaufLogUd_Click(object sender, RoutedEventArgs e)

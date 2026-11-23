@@ -8,7 +8,7 @@
         Title="ChaufførSide" Height="450" Width="800">
     <Grid>
         <Button x:Name="ChaufLogUd" Content="Log Ud" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Click="ChaufLogUd_Click"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,0,0,0"/>
+        <ListBox x:Name="chaufførListbox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,0,0,0"/>
         <Button Content="Pause" Margin="289,217,375,0" VerticalAlignment="Top" Height="84"/>
         <Button Content="Fri" Margin="46,0,618,133" VerticalAlignment="Bottom" Height="84"/>
         <Button Content="Utilgængelig" Margin="289,110,375,0" VerticalAlignment="Top" Height="84"/>

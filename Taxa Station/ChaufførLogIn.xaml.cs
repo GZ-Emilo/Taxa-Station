@@ -17,10 +17,10 @@ namespace Taxa_Station
     /// </summary>
     public partial class ChaufførLogIn : Window
     {
-        private List<Chauffør> loginlist;
+        private List<Taxa> loginlist;
 
 
-        public ChaufførLogIn(List<Chauffør> loginlist)
+        public ChaufførLogIn(List<Taxa> loginlist)
         {
             InitializeComponent();
             this.loginlist = loginlist;
@@ -35,7 +35,7 @@ namespace Taxa_Station
 
         private void ChaufLogIn_Click(object sender, RoutedEventArgs e)
         {
-            ChaufførSide ChaufSide = new ChaufførSide();
+            ChaufførSide ChaufSide = new ChaufførSide(loginlist);
             ChaufSide.Show();
             this.Close();
         }

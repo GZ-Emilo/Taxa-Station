@@ -18,8 +18,8 @@ namespace Taxa_Station
     public partial class logIn : Window
     {
 
-        private List<Chauffør> loginlist;
-        public logIn(List<Chauffør> loginlist)
+        private List<Taxa> loginlist;
+        public logIn(List<Taxa> loginlist)
         {
             InitializeComponent();
 

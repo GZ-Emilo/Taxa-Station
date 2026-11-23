@@ -17,8 +17,8 @@ namespace Taxa_Station
     /// </summary>
     public partial class OperatørLogIn : Window
     {
-        private List<Chauffør> loginlist;
-        public OperatørLogIn(List<Chauffør> loginlist)
+        private List<Taxa> loginlist;
+        public OperatørLogIn(List<Taxa> loginlist)
         {
             InitializeComponent();
             this.loginlist = loginlist;
