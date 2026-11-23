@@ -73,6 +73,49 @@ namespace Taxa_Station
             afhentningssted.Clear();
             TaxaStatus.Items.Clear();
             tilføjTilListe(taxalist);
+            gemList();
+        }
+
+        void gemList()
+        {
+            string[] gem = new string[taxalist.Count * 4];
+            int arrayPos = 0;
+            int p = 0;
+
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.navn;
+                arrayPos++;
+                p++;
+
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.status;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.bn;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.pass;
+                arrayPos++;
+                p++;
+            }
+
+            System.IO.File.WriteAllLines(@"gem1.txt", gem);
         }
     }
 }

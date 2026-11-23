@@ -13,9 +13,9 @@
         </Grid.RowDefinitions>
         <Button x:Name="ChaufLogUd" Content="Log Ud" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Click="ChaufLogUd_Click"/>
         <ListBox x:Name="chaufførListbox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,0,0,0" Grid.RowSpan="2"/>
-        <Button x:Name="sætPause" Content="Pause" Margin="0,0,375,133" VerticalAlignment="Bottom" Height="84" Grid.RowSpan="2" HorizontalAlignment="Right" Width="136"/>
-        <Button x:Name="sætFri" Content="Fri" Margin="0,0,618,133" HorizontalAlignment="Right" Width="136" Height="84" VerticalAlignment="Bottom" Grid.RowSpan="2"/>
-        <Button x:Name="sætUtilgængelig" Content="Utilgængelig" Margin="0,0,375,62" VerticalAlignment="Bottom" Height="84" HorizontalAlignment="Right" Width="136"/>
+        <Button x:Name="sætPause" Content="Pause" Margin="0,0,375,133" VerticalAlignment="Bottom" Height="84" Grid.RowSpan="2" HorizontalAlignment="Right" Width="136" Click="sætPause_Click"/>
+        <Button x:Name="sætFri" Content="Fri" Margin="0,0,618,133" HorizontalAlignment="Right" Width="136" Height="84" VerticalAlignment="Bottom" Grid.RowSpan="2" Click="sætFri_Click"/>
+        <Button x:Name="sætUtilgængelig" Content="Utilgængelig" Margin="0,0,375,62" VerticalAlignment="Bottom" Height="84" HorizontalAlignment="Right" Width="136" Click="sætUtilgængelig_Click"/>
         <Button x:Name="sætLedig" Content="Ledig" Margin="0,0,618,62" VerticalAlignment="Bottom" Height="84" HorizontalAlignment="Right" Width="136" Click="sætLedig_Click"/>
 
     </Grid>
