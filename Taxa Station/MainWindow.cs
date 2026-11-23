@@ -28,45 +28,52 @@ namespace Taxa_Station
 
             int i = 0;
             int arrayPos = 0;
-            string[] load = System.IO.File.ReadAllLines(@"gem1.txt");
 
-            while (i < load.Length/5)
+            if (System.IO.File.Exists(@"gem1.txt"))
             {
-                Taxa taxa = new Taxa();
-                taxa.chauffør = new Chauffør();
+                string[] load = System.IO.File.ReadAllLines(@"gem1.txt");
 
-                taxalist.Add(taxa);
-                i++;
+                if (load.Length > 3)
+                {
+                    while (i < load.Length / 4)
+                    {
+                        Taxa taxa = new Taxa();
+                        taxa.chauffør = new Chauffør();
+
+                        taxalist.Add(taxa);
+                        i++;
+                    }
+                    i = 0;
+                    while (i < taxalist.Count)
+                    {
+                        taxalist[i].chauffør.navn = load[arrayPos];
+                        arrayPos++;
+                        i++;
+                    }
+                    i = 0;
+                    while (i < taxalist.Count)
+                    {
+                        taxalist[i].chauffør.status = load[arrayPos];
+                        arrayPos++;
+                        i++;
+                    }
+                    i = 0;
+                    while (i < taxalist.Count)
+                    {
+                        taxalist[i].chauffør.bn = load[arrayPos];
+                        arrayPos++;
+                        i++;
+                    }
+                    i = 0;
+                    while (i < taxalist.Count)
+                    {
+                        taxalist[i].chauffør.pass = load[arrayPos];
+                        arrayPos++;
+                        i++;
+                    }
+                }
             }
-            i = 0;
-            while (i < taxalist.Count)
-            {
-                taxalist[i].chauffør.navn = load[arrayPos];
-                arrayPos++;
-                i++;
-            }
-            i = 0;
-            while (i < taxalist.Count)
-            {
-                taxalist[i].chauffør.status = load[arrayPos];
-                arrayPos++;
-                i++;
-            }
-            i = 0;
-            while (i < taxalist.Count)
-            {
-                taxalist[i].chauffør.bn = load[arrayPos];
-                arrayPos++;
-                i++;
-            }
-            i = 0;
-            while (i < taxalist.Count)
-            {
-                taxalist[i].chauffør.pass = load[arrayPos];
-                arrayPos++;
-                i++;
-            }
-            
+
 
 
             if (taxalist.Count <= 0)

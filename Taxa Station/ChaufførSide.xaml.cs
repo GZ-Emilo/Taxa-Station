@@ -55,7 +55,10 @@ namespace Taxa_Station
             {
                 if (chauflist[i].chauffør.bn == chaufLogged[0].chauffør.bn && chauflist[i].chauffør.pass == chaufLogged[0].chauffør.pass)
                 {
-                    chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                    if (chauflist[i].chauffør.status != chaufLogged[0].chauffør.status)
+                    {
+                        chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                    }
                 }
                 i++;
             }
@@ -63,10 +66,68 @@ namespace Taxa_Station
             gemList();
 
         }
+
+        private void sætUtilgængelig_Click(object sender, RoutedEventArgs e)
+        {
+            chaufLogged[0].chauffør.status = "Utilgængelig";
+            int i = 0;
+            while (i < chauflist.Count)
+            {
+                if (chauflist[i].chauffør.bn == chaufLogged[0].chauffør.bn && chauflist[i].chauffør.pass == chaufLogged[0].chauffør.pass)
+                {
+                    if (chauflist[i].chauffør.status != chaufLogged[0].chauffør.status)
+                    {
+                        chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                    }
+                }
+                i++;
+            }
+            chaufførListbox.Items.Refresh();
+            gemList();
+        }
+
+        private void sætFri_Click(object sender, RoutedEventArgs e)
+        {
+            chaufLogged[0].chauffør.status = "Fri";
+            int i = 0;
+            while (i < chauflist.Count)
+            {
+                if (chauflist[i].chauffør.bn == chaufLogged[0].chauffør.bn && chauflist[i].chauffør.pass == chaufLogged[0].chauffør.pass)
+                {
+                    if (chauflist[i].chauffør.status != chaufLogged[0].chauffør.status)
+                    {
+                        chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                    }
+                }
+                i++;
+            }
+            chaufførListbox.Items.Refresh();
+            gemList();
+        }
+
+        private void sætPause_Click(object sender, RoutedEventArgs e)
+        {
+            chaufLogged[0].chauffør.status = "Pause";
+            int i = 0;
+            while (i < chauflist.Count)
+            {
+                if (chauflist[i].chauffør.bn == chaufLogged[0].chauffør.bn && chauflist[i].chauffør.pass == chaufLogged[0].chauffør.pass)
+                {
+                    if (chauflist[i].chauffør.status != chaufLogged[0].chauffør.status)
+                    {
+                        chauflist[i].chauffør.status = chaufLogged[0].chauffør.status;
+                    }
+                }
+                i++;
+            }
+            chaufførListbox.Items.Refresh();
+            gemList();
+        }
+
         void gemList()
         {
-            string[] gem = new string[chauflist.Count * 5];
-            int arrayPos = 4;
+            string[] gem = new string[chauflist.Count * 4];
+            int arrayPos = 0;
             int p = 0;
 
 
@@ -79,7 +140,7 @@ namespace Taxa_Station
             }
             p = 0;
 
-            while (p<chauflist.Count)
+            while (p < chauflist.Count)
             {
                 gem[arrayPos] = chauflist[p].chauffør.status;
                 arrayPos++;
@@ -87,7 +148,7 @@ namespace Taxa_Station
             }
             p = 0;
 
-            while (p<chauflist.Count)
+            while (p < chauflist.Count)
             {
                 gem[arrayPos] = chauflist[p].chauffør.bn;
                 arrayPos++;
@@ -95,7 +156,7 @@ namespace Taxa_Station
             }
             p = 0;
 
-            while (p<chauflist.Count)
+            while (p < chauflist.Count)
             {
                 gem[arrayPos] = chauflist[p].chauffør.pass;
                 arrayPos++;
