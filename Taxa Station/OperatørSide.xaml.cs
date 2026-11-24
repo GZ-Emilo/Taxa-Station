@@ -23,13 +23,28 @@ namespace Taxa_Station
         {
             InitializeComponent();
             this.loginlist = loginlist;
+            skabListe();
         }
 
+        public void skabListe()
+        {
+            int i = 0;
+            while (i < loginlist.Count)
+            {
+                OperatørLog.Items.Add(loginlist[i].chauffør);
+                i++;
+            }
+        }
         private void OPLogUd_Click(object sender, RoutedEventArgs e)
         {
             MainWindow tilbage = new MainWindow();
             tilbage.Show();
             this.Close();
+        }
+
+        private void OperatørLog_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

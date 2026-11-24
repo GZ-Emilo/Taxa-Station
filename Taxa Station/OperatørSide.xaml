@@ -8,7 +8,7 @@
         Title="OperatørSide" Height="450" Width="800">
     <Grid>
         <Button x:Name="OPLogUd" Content="Log Ud" HorizontalAlignment="Left" Margin="24,22,0,0" VerticalAlignment="Top" Click="OPLogUd_Click"/>
-        <ListBox d:ItemsSource="{d:SampleData ItemCount=5}" Margin="523,0,0,0"/>
+        <ListBox x:Name="OperatørLog" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="523,0,0,0" SelectionChanged="OperatørLog_SelectionChanged"/>
 
     </Grid>
 </Window>
