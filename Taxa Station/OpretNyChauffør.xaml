@@ -1,0 +1,21 @@
+﻿<Window x:Class="Taxa_Station.OpretNyChauffør"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Taxa_Station"
+        mc:Ignorable="d"
+        Title="OpretNyChauffør" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Tilbage" Content="Tilbage" HorizontalAlignment="Left" Margin="24,21,0,0" VerticalAlignment="Top" Click="Tilbage_Click"/>
+        <Label Content="Navn" HorizontalAlignment="Left" Margin="170,103,0,0" VerticalAlignment="Top"/>
+        <Label Content="Brugernavn" HorizontalAlignment="Left" Margin="153,129,0,0" VerticalAlignment="Top"/>
+        <Label Content="Adgangskode" HorizontalAlignment="Left" Margin="147,160,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="nyNavn" HorizontalAlignment="Left" Margin="242,107,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.489,0.487"/>
+        <TextBox x:Name="nyBN" HorizontalAlignment="Left" Margin="242,137,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="nyAdg" HorizontalAlignment="Left" Margin="242,168,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="OpretChauf" Content="Opret Chauffør" HorizontalAlignment="Left" Margin="246,0,0,0" VerticalAlignment="Center" Width="112" Height="25" Click="OpretChauf_Click"/>
+        <ListBox x:Name="TaxaStatus" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="514,0,0,0"/>
+
+    </Grid>
+</Window>

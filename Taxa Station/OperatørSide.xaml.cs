@@ -23,12 +23,30 @@ namespace Taxa_Station
         {
             InitializeComponent();
             this.loginlist = loginlist;
+            tilføjTilListe(loginlist);
+        }
+
+        private void tilføjTilListe(List<Taxa> list)
+        {
+            int i = 0;
+            while (i < list.Count)
+            {
+                TaxaStatus.Items.Add(list[i].chauffør);
+                i++;
+            }
         }
 
         private void OPLogUd_Click(object sender, RoutedEventArgs e)
         {
             MainWindow tilbage = new MainWindow();
             tilbage.Show();
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            OpretNyChauffør opretNy = new OpretNyChauffør(loginlist);
+            opretNy.Show();
             this.Close();
         }
     }
