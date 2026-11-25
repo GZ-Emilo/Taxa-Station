@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Taxa_Station
 {
@@ -20,6 +21,7 @@ namespace Taxa_Station
     {
         private List<Taxa> chauflist;
         List<Taxa> chaufLogged;
+        DateTime ArbejdstidTimer;
 
         public ChaufførSide(List<Taxa> loginlist, List<Taxa> chaufLoggedIn)
         {
@@ -163,6 +165,18 @@ namespace Taxa_Station
             }
 
             System.IO.File.WriteAllLines(@"gem1.txt", gem);
+        }
+
+        private void påJob_Click(object sender, RoutedEventArgs e)
+        {
+            ArbejdstidTimer = DateTime.Now;
+            Arbejdstid.Text = "På arbejde";
+        }
+
+        private void afJob_Click(object sender, RoutedEventArgs e)
+        {
+            TimeSpan tidArbejdet = DateTime.Now - ArbejdstidTimer;
+            Arbejdstid.Text = tidArbejdet.ToString(@"hh\:mm\:ss");
         }
     }
 }

@@ -13,10 +13,15 @@
         </Grid.RowDefinitions>
         <Button x:Name="ChaufLogUd" Content="Log Ud" HorizontalAlignment="Left" Margin="25,22,0,0" VerticalAlignment="Top" Click="ChaufLogUd_Click"/>
         <ListBox x:Name="chaufførListbox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="508,0,0,0" Grid.RowSpan="2"/>
-        <Button x:Name="sætPause" Content="Pause" Margin="289,0,0,0" VerticalAlignment="Center" Height="84" HorizontalAlignment="Left" Width="136" Click="sætPause_Click" Grid.Row="1"/>
-        <Button x:Name="sætFri" Content="Fri" Margin="46,0,0,0" HorizontalAlignment="Left" Width="136" Height="84" VerticalAlignment="Center" Click="sætFri_Click" Grid.Row="1"/>
-        <Button x:Name="sætUtilgængelig" Content="Utilgængelig" Margin="0,0,375,141" VerticalAlignment="Bottom" Height="84" HorizontalAlignment="Right" Width="136" Click="sætUtilgængelig_Click" Grid.RowSpan="2"/>
-        <Button x:Name="sætLedig" Content="Ledig" Margin="0,0,618,141" VerticalAlignment="Bottom" Height="84" HorizontalAlignment="Right" Width="136" Click="sætLedig_Click" Grid.RowSpan="2"/>
-
+        <Button x:Name="sætPause" Content="Pause" Margin="0,76,459,0" VerticalAlignment="Top" Height="61" HorizontalAlignment="Right" Width="92" Click="sætPause_Click" Grid.Row="1"/>
+        <Button x:Name="sætFri" Content="Fri" Margin="137,76,0,0" HorizontalAlignment="Left" Width="92" Height="61" VerticalAlignment="Top" Click="sætFri_Click" Grid.Row="1"/>
+        <Button x:Name="sætUtilgængelig" Content="Utilgængelig" Margin="0,0,459,108" VerticalAlignment="Bottom" Height="61" HorizontalAlignment="Right" Width="92" Click="sætUtilgængelig_Click" Grid.Row="1"/>
+        <Button x:Name="sætLedig" Content="Ledig" Margin="0,0,571,108" VerticalAlignment="Bottom" Height="61" HorizontalAlignment="Right" Width="92" Click="sætLedig_Click" Grid.Row="1"/>
+        <Label Content="Arbejdstid:" HorizontalAlignment="Left" Margin="159,32,0,0" VerticalAlignment="Top" Height="29" Width="68" Background="#FFE0DCDC"/>
+        <Button x:Name="påJob" Content="På job" HorizontalAlignment="Left" Margin="120,79,0,0" VerticalAlignment="Top" Height="24" Width="73" Click="påJob_Click"/>
+        <Button x:Name="afJob" Content="Af job" HorizontalAlignment="Left" Margin="249,81,0,0" VerticalAlignment="Top" Height="22" Width="85" Click="afJob_Click"/>
+        <TextBlock x:Name="Arbejdstid" HorizontalAlignment="Left" Margin="232,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="20" Width="168" Foreground="White"/>
+        <Image HorizontalAlignment="Center" Height="450" VerticalAlignment="Top" Width="800" Source="/resizeplus_Designer.png" Panel.ZIndex="-2" Margin="0,-16,0,0" Grid.RowSpan="2"/>
+        <Image HorizontalAlignment="Left" Height="157" Margin="341,0,0,0" VerticalAlignment="Top" Width="159" Panel.ZIndex="-1" Source="/Billeder/Designer (2).png"/>
     </Grid>
 </Window>

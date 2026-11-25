@@ -9,4 +9,14 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Designer %282%29.png" />
+    <None Remove="resizeplus_Designer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Designer (2).png" />
+    <Resource Include="resizeplus_Designer.png" />
+  </ItemGroup>
+
 </Project>

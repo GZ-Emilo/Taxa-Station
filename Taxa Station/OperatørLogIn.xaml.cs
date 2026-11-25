@@ -18,6 +18,7 @@ namespace Taxa_Station
     public partial class OperatørLogIn : Window
     {
         private List<Taxa> loginlist;
+        private Operatør OP = new Operatør();
         public OperatørLogIn(List<Taxa> loginlist)
         {
             InitializeComponent();
@@ -33,9 +34,18 @@ namespace Taxa_Station
 
         private void OPLogIn_Click(object sender, RoutedEventArgs e)
         {
-            OperatørSide OPSide = new OperatørSide(loginlist);
-            OPSide.Show();
-            this.Close();
+            if (brugernavn.Text == OP.bn && adgangskode.Text == OP.pass)
+            {
+                OperatørSide OPSide = new OperatørSide(loginlist);
+                OPSide.Show();
+                this.Close();
+            }
+        }
+
+        public class Operatør
+        {
+            public string bn = "Operatør";
+            public string pass = "123";
         }
     }
 }
