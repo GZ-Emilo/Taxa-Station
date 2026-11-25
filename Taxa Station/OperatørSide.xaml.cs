@@ -23,7 +23,17 @@ namespace Taxa_Station
         {
             InitializeComponent();
             this.loginlist = loginlist;
-            skabListe();
+            tilføjTilListe(loginlist);
+        }
+
+        private void tilføjTilListe(List<Taxa> list)
+        {
+            int i = 0;
+            while (i < list.Count)
+            {
+                TaxaStatus.Items.Add(list[i].chauffør);
+                i++;
+            }
         }
 
         public void skabListe()
@@ -42,9 +52,11 @@ namespace Taxa_Station
             this.Close();
         }
 
-        private void OperatørLog_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            OpretNyChauffør opretNy = new OpretNyChauffør(loginlist);
+            opretNy.Show();
+            this.Close();
         }
     }
 }

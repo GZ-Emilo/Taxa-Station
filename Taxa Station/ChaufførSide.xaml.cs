@@ -38,7 +38,6 @@ namespace Taxa_Station
                 i++;
             }
         }
-        //test
 
         private void ChaufLogUd_Click(object sender, RoutedEventArgs e)
         {
@@ -123,7 +122,7 @@ namespace Taxa_Station
             chaufførListbox.Items.Refresh();
             gemList();
         }
-
+        
         void gemList()
         {
             string[] gem = new string[chauflist.Count * 4];
