@@ -18,12 +18,12 @@ namespace Taxa_Station
     /// </summary>
     public partial class OperatørSide : Window
     {
-        List<Taxa> loginlist;
+        List<Taxa> taxalist;
         public OperatørSide(List<Taxa> loginlist)
         {
             InitializeComponent();
-            this.loginlist = loginlist;
-            tilføjTilListe(loginlist);
+            taxalist = loginlist;
+            tilføjTilListe(taxalist);
         }
 
         private void tilføjTilListe(List<Taxa> list)
@@ -45,9 +45,70 @@ namespace Taxa_Station
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            OpretNyChauffør opretNy = new OpretNyChauffør(loginlist);
+            OpretNyChauffør opretNy = new OpretNyChauffør(taxalist);
             opretNy.Show();
             this.Close();
+        }
+
+        private void sletChauffør_Click(object sender, RoutedEventArgs e)
+        {
+            Taxa valgt = new Taxa();
+            valgt.chauffør =(Chauffør) TaxaStatus.SelectedItem;
+            int i = 0;
+            while (i < taxalist.Count)
+            {
+                if (valgt.chauffør.bn == taxalist[i].chauffør.bn && valgt.chauffør.pass == taxalist[i].chauffør.pass)
+                {
+                    TaxaStatus.Items.Remove(taxalist[i].chauffør);
+                    taxalist.Remove(taxalist[i]);
+                    TaxaStatus.UnselectAll();
+                    gemList();
+                    TaxaStatus.Items.Refresh();
+                }
+                i++;
+            }
+        }
+
+        void gemList()
+        {
+            string[] gem = new string[taxalist.Count * 4];
+            int arrayPos = 0;
+            int p = 0;
+
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.navn;
+                arrayPos++;
+                p++;
+
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.status;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.bn;
+                arrayPos++;
+                p++;
+            }
+            p = 0;
+
+            while (p < taxalist.Count)
+            {
+                gem[arrayPos] = taxalist[p].chauffør.pass;
+                arrayPos++;
+                p++;
+            }
+
+            System.IO.File.WriteAllLines(@"gem1.txt", gem);
         }
     }
 }

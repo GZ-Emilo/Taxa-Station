@@ -7,8 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="LogInButton" Content="Log In" HorizontalAlignment="Left" Margin="520,0,0,0" VerticalAlignment="Center" Height="40" Width="80" Click="LogInButton_Click"/>
-        <Button x:Name="BestilTaxaButton" Content="Bestil Taxa" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="80" Margin="200,0,0,0" Click="BestilTaxaButton_Click"/>
+        <Button x:Name="LogInButton" Content="Log In" HorizontalAlignment="Left" Margin="561,0,0,0" VerticalAlignment="Center" Height="40" Width="80" Click="LogInButton_Click"/>
+        <Button x:Name="BestilTaxaButton" Content="Bestil Taxa" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="80" Margin="160,0,0,0" Click="BestilTaxaButton_Click"/>
+        <Image HorizontalAlignment="Center" Height="450" VerticalAlignment="Top" Width="800" Source="/resizeplus_Designer.png" Panel.ZIndex="-2" Margin="0,-16,0,0"/>
+        <Image HorizontalAlignment="Left" Height="166" Margin="317,10,0,0" VerticalAlignment="Top" Width="173" Source="/Designer (2).png" Panel.ZIndex="-1"/>
 
     </Grid>
 </Window>
